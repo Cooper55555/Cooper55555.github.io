@@ -1,0 +1,202 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(180deg, #f8f9fa, #e9ecef);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    transition: margin-left 0.5s;
+}
+
+/* Centered Content */
+.container {
+    max-width: 700px;
+    margin: 80px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Heading */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #222;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin-bottom: 25px;
+}
+
+/* Form Styling */
+input[type="file"], select, button {
+    width: 95%;
+    max-width: 550px;
+    margin: 12px 0;
+    padding: 14px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* Input Fields */
+input[type="file"], select {
+    background: #f8f9fa;
+}
+
+input[type="file"]:hover, select:hover {
+    border-color: #adb5bd;
+}
+
+/* Buttons */
+button {
+    background: #dc3545; /* CloudConvert's red */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    padding: 14px;
+}
+
+button:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+}
+
+/* Scroll Down Button */
+.scroll-down {
+    margin-top: 25px;
+    font-size: 18px;
+    color: #dc3545;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.scroll-down:hover {
+    color: #b52b38;
+}
+
+/* Information Section */
+.info-section {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.info-section h2 {
+    font-size: 2rem;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.info-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.info-section li {
+    font-size: 16px;
+    margin: 8px 0;
+    color: #6c757d;
+}
+
+/* Sidebar Navigation */
+.sidenav {
+    height: 100%;
+    width: 260px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: -260px;
+    background: #212529;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 60px;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.2);
+}
+
+.sidenav h2 {
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 22px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#tab {
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #adb5bd;
+    display: block;
+    transition: 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+#tab:hover {
+    color: #f8f9fa;
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 3px solid #dc3545;
+}
+
+/* Close Button */
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 36px;
+    color: #adb5bd;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.closebtn:hover {
+    color: white;
+}
+
+/* Open Button */
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    transition: 0.3s ease;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.openbtn:hover {
+    background: #c82333;
+    transform: scale(1.05);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container, .info-section {
+        width: 90%;
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    input[type="file"], select, button {
+        width: 100%;
+    }
+}
