@@ -387,43 +387,9 @@ button:hover {
     input[type="file"], select, button {
         width: 250px;
     }
-
-    #features {
-        padding: 60px 20px;
-        background-color: white;
-        color: #212121;
-        text-align: center;
-    }
-    
-    #features-title {
-        margin-bottom: 30px;
-    }
     
     #feature-container {
-        display: grid;
-        grid-template-columns: repeat(1, 4fr);
-        max-width: 350px;
-        margin: 0 auto;
-        text-align: center;
-    }
-    
-    .feature-item {
-        display: flex;
-        align-items: center;
-        border-radius: 8px;
-        padding: 10px;
-        margin: 8px;
-        width: auto;
-        font-size: 16px;
-        text-align: center;
-        justify-content: center;
-    }
-    
-    .feature-icon {
-        font-size: 25px;
-        color: #dc3545;
-        display: flex;
-        margin-right: 12px;
+        overflow-x: auto;
     }
 
     .name {
