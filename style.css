@@ -1,25 +1,26 @@
+/* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); */
+
 body {
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(180deg, #f8f9fa, #e9ecef);
+    background-color: white;
     color: #333;
     margin: 0;
     padding: 0;
     transition: margin-left 0.5s;
+    height: 100vh;
 }
 
-/* Centered Content */
 .container {
     max-width: 700px;
-    margin: 80px auto;
+    margin: 10px auto;
     padding: 30px;
-    background: white;
+    background-color: white;
     border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     text-align: center;
     animation: fadeIn 0.8s ease-in-out;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* Heading */
 h1 {
     font-size: 2.5rem;
     margin-bottom: 5px;
@@ -33,7 +34,6 @@ h1 {
     margin-bottom: 25px;
 }
 
-/* Form Styling */
 input[type="file"], select, button {
     width: 95%;
     max-width: 550px;
@@ -45,7 +45,6 @@ input[type="file"], select, button {
     transition: all 0.3s ease;
 }
 
-/* Input Fields */
 input[type="file"], select {
     background: #f8f9fa;
 }
@@ -54,9 +53,8 @@ input[type="file"]:hover, select:hover {
     border-color: #adb5bd;
 }
 
-/* Buttons */
 button {
-    background: #dc3545; /* CloudConvert's red */
+    background: #dc3545;
     color: white;
     border: none;
     cursor: pointer;
@@ -72,7 +70,6 @@ button:hover {
     transform: translateY(-2px);
 }
 
-/* Scroll Down Button */
 .scroll-down {
     margin-top: 25px;
     font-size: 18px;
@@ -85,15 +82,14 @@ button:hover {
     color: #b52b38;
 }
 
-/* Information Section */
 .info-section {
     max-width: 700px;
     margin: 50px auto;
     padding: 30px;
     background: white;
     border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .info-section h2 {
@@ -113,7 +109,6 @@ button:hover {
     color: #6c757d;
 }
 
-/* Sidebar Navigation */
 .sidenav {
     height: 100%;
     width: 260px;
@@ -153,7 +148,6 @@ button:hover {
     border-left: 3px solid #dc3545;
 }
 
-/* Close Button */
 .closebtn {
     position: absolute;
     top: 10px;
@@ -168,7 +162,6 @@ button:hover {
     color: white;
 }
 
-/* Open Button */
 .openbtn {
     font-size: 20px;
     cursor: pointer;
@@ -178,7 +171,6 @@ button:hover {
     padding: 12px;
     border-radius: 6px;
     transition: 0.3s ease;
-    position: absolute;
     top: 20px;
     left: 20px;
 }
@@ -188,7 +180,35 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Mobile Responsiveness */
+#keyword {
+    padding: 10px;
+    margin: 10px 0;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 1.2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.name {
+    background: lightcoral;
+    border: 3px solid #dc3545;;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    font-weight: bold;
+    transition: transform 0.2s;
+    color: white;
+}
+.name:hover {
+    transform: scale(1.05);
+}
+
 @media (max-width: 768px) {
     .container, .info-section {
         width: 90%;
@@ -199,4 +219,154 @@ button:hover {
     input[type="file"], select, button {
         width: 100%;
     }
+}
+
+#header {
+    background-color: #333333;
+    padding: 20px 0;
+}
+
+#header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+#nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+#nav-list li {
+    margin-left: 20px;
+}
+
+#nav a {
+    color: #333;
+    text-decoration: none;
+}
+
+#signup-link {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+#hero {
+    text-align: center;
+    padding: 70px 20px;
+    background-color: #424242;
+}
+
+#hero-title {
+    font-size: 36px;
+}
+
+#hero-description {
+    font-size: 18px;
+}
+
+#fileInput {
+    margin: 20px 0;
+}
+
+#convertBtn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#features {
+    padding: 60px 20px;
+    background-color: white;
+    color: #212121;
+    text-align: center;
+}
+
+#features-title {
+    margin-bottom: 30px;
+}
+
+#feature-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px;
+    width: 300px;
+    font-size: 20px;
+}
+
+.feature-icon {
+    font-size: 50px;
+    color: #dc3545;
+    margin-right: 15px;
+}
+
+.feature-item h3 {
+    color: #dc3545;
+    margin: 0;
+}
+
+.feature-item p {
+    margin: 0;
+}
+
+#footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333333;
+    color: white;
+    position: relative;
+}
+
+#footer-text {
+    margin: 0;
+}
+
+#whiteText {
+    color: white;
+    text-align: left;
+    font-size: 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 30px;
+}
+
+#whiteTextExtra {
+    color: white;
+    text-align: left;
+    width: 70%;
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+#whiteButton {
+    width: 700px;
+    font-size: 30px;
+    margin-left: 250px;
+    margin-right: 150px;
 }

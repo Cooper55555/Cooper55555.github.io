@@ -7,7 +7,7 @@ function closeNav() {
 }
 
 function scrollToInfo() {
-    document.getElementById("info").scrollIntoView({ behavior: 'smooth' });
+    document.getElementById("features").scrollIntoView({ behavior: 'smooth' });
 }
 
 document.getElementById('converter-form').addEventListener('submit', function(event) {
@@ -29,79 +29,73 @@ document.getElementById('converter-form').addEventListener('submit', function(ev
     const fileExtension = fileName.split('.').pop().toLowerCase();
     const selectedFormat = formatSelect.value;
 
-    // Validate file type based on selected conversion
     let isValid = false;
     switch (selectedFormat) {
-        // Video validations
+
         case 'mp4':
-            isValid = fileExtension === 'mkv' || fileExtension === 'mov' || fileExtension === 'avi' || fileExtension === 'gif'; // MKV, MOV, AVI to MP4, GIF to MP4
+            isValid = fileExtension === 'mkv' || fileExtension === 'mov' || fileExtension === 'avi' || fileExtension === 'gif';
             break;
         case 'mov':
-            isValid = fileExtension === 'mkv' || fileExtension === 'mp4' || fileExtension === 'avi'; // MKV to MOV, MP4 to MOV, AVI to MOV
+            isValid = fileExtension === 'mkv' || fileExtension === 'mp4' || fileExtension === 'avi';
             break;
         case 'avi':
-            isValid = fileExtension === 'mp4' || fileExtension === 'mov'; // MP4 or MOV to AVI
+            isValid = fileExtension === 'mp4' || fileExtension === 'mov';
             break;
         case 'gif':
-            isValid = fileExtension === 'gif'; // GIF to MP4
+            isValid = fileExtension === 'gif';
             break;
 
-        // Image validations
         case 'jpg':
-            isValid = fileExtension === 'png' || fileExtension === 'webp'; // PNG to JPG, WEBP to JPG
+            isValid = fileExtension === 'png' || fileExtension === 'webp';
             break;
         case 'png':
-            isValid = fileExtension === 'jpg' || fileExtension === 'svg'; // JPG to PNG, PNG to SVG
+            isValid = fileExtension === 'jpg' || fileExtension === 'svg';
             break;
         case 'bmp':
-            isValid = fileExtension === 'bmp'; // BMP to PNG
+            isValid = fileExtension === 'bmp';
             break;
         case 'svg':
-            isValid = fileExtension === 'png'; // PNG to SVG
+            isValid = fileExtension === 'png';
             break;
 
-        // Audio validations
         case 'wav':
-            isValid = fileExtension === 'mp3'; // MP3 to WAV
+            isValid = fileExtension === 'mp3';
             break;
         case 'mp3':
-            isValid = fileExtension === 'wav' || fileExtension === 'flac'; // WAV to MP3, FLAC to MP3
+            isValid = fileExtension === 'wav' || fileExtension === 'flac';
             break;
 
-        // Document validations
         case 'doc':
-            isValid = fileExtension === 'pdf'; // PDF to DOC
+            isValid = fileExtension === 'pdf';
             break;
         case 'pdf':
-            isValid = fileExtension === 'doc' || fileExtension === 'txt' || fileExtension === 'epub'; // DOC to PDF, TXT to PDF, EPUB to PDF
+            isValid = fileExtension === 'doc' || fileExtension === 'txt' || fileExtension === 'epub';
             break;
         case 'txt':
-            isValid = fileExtension === 'pdf'; // PDF to TXT
+            isValid = fileExtension === 'pdf';
             break;
         case 'xlsx':
-            isValid = fileExtension === 'csv'; // CSV to XLSX
+            isValid = fileExtension === 'csv';
             break;
         case 'csv':
-            isValid = fileExtension === 'xlsx'; // XLSX to CSV
+            isValid = fileExtension === 'xlsx';
             break;
         case 'ppt':
-            isValid = fileExtension === 'pdf'; // PDF to PPT
+            isValid = fileExtension === 'pdf';
             break;
 
-        // Archive validations
         case 'zip':
-            isValid = fileExtension === 'rar'; // RAR to ZIP
+            isValid = fileExtension === 'rar';
             break;
         case 'rar':
-            isValid = fileExtension === 'zip'; // ZIP to RAR
+            isValid = fileExtension === 'zip';
             break;
 
-        // Disk Image validations
         case 'img':
-            isValid = fileExtension === 'iso'; // ISO to IMG
+            isValid = fileExtension === 'iso';
             break;
         case 'iso':
-            isValid = fileExtension === 'img'; // IMG to ISO
+            isValid = fileExtension === 'img';
             break;
 
         default:
@@ -115,19 +109,60 @@ document.getElementById('converter-form').addEventListener('submit', function(ev
     }
 
     resultMessage.innerText = 'Preparing your file...';
-    downloadButton.style.display = 'none'; // Hide download button during "processing"
+    downloadButton.style.display = 'none';
 
-    // Simulate file processing 
     setTimeout(() => {
         const newFileName = `converted_file.${selectedFormat}`;
         const link = document.createElement('a');
-        link.href = URL.createObjectURL(file); // Create a URL
-        link.download = newFileName; // Set name to new file
-        link.click(); // Automatically click the link to prompt download
+        link.href = URL.createObjectURL(file);
+        link.download = newFileName;
+        link.click();
         resultMessage.innerText = 'Your file has been converted!';
-        downloadButton.style.display = 'block'; // Show download button if needed
+        downloadButton.style.display = 'block';
 
-        // Revoke the object URL after a slight delay
-        setTimeout(() => URL.revokeObjectURL(link.href), 100); // Clean up memory
-    }, 3000); // Simulate a processing time
+        setTimeout(() => URL.revokeObjectURL(link.href), 100);
+    }, 3000);
+});
+
+function generateName() {
+    const keyword = document.getElementById('keyword').value.trim();
+    const words = [
+        "Solutions", "Innovations", "Dreams", "Concepts", "Emporium", 
+        "Creations", "Hub", "Nest", "Sphere", "Venture", 
+        "Works", "Design", "Services", "Connection", "Point", 
+        "Concept", "Group", "Collective", "Portal", "Idea", 
+        "Factory", "Network", "Zone", "Realm", "Source", 
+        "Insight", "Experience", "Vision", "Lab", "Engagement", 
+        "Center", "Team", "Dynamics", "Pathways", "Minds", 
+        "Strategies", "Labs", "Systems", "Prospects", "Grove", 
+        "Principle", "Domain", "Bridge", "Codex", "Boutique"
+    ];
+
+    if (keyword === "") {
+        document.getElementById('result').innerText = "Please enter a keyword.";
+        return;
+    }
+
+    const firstPart = keyword.charAt(0).toUpperCase() + keyword.slice(1, Math.floor(keyword.length / 2));
+    const lastPart = keyword.slice(Math.floor(keyword.length / 2)).toLowerCase();
+    const generatedNames = [];
+
+    const shuffledWords = words.sort(() => 0.5 - Math.random()).slice(0, 10);
+
+    shuffledWords.forEach(word => {
+        generatedNames.push(firstPart + word);
+        generatedNames.push(keyword + word);
+        generatedNames.push(word + lastPart);
+    });
+
+    const uniqueNames = Array.from(new Set(generatedNames)).slice(0, 10);
+
+    document.getElementById('result').innerHTML = uniqueNames.map(name => `<div class="name">${name}</div>`).join('');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const button = document.getElementById('generateButton');
+    if (button) {
+        button.addEventListener('click', generateName);
+    }
 });

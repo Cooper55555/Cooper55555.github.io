@@ -8,72 +8,88 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 <body>
-    <span class="openbtn" onclick="openNav()">&#9776; Open Menu</span>
-    <div class="sidenav" id="mySidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <h2>Menu</h2>
-        <a href="index.html" id="tab">Home</a>
-        <a href="convert.html" id="tab">Converter</a>
-    </div>
-    <div id="main">
-        <div class="container">
-            <h1>File Converter</h1>
-            <p class="tagline">Convert your files quick and easy!</p>
+        <header id="header">
+            <div id="header-container">
+                <span class="openbtn" onclick="openNav()">&#9776; Open Menu</span>
+                <div class="sidenav" id="mySidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <h2>Menu</h2>
+                    <a href="index.html" id="tab">Home</a>
+                    <a href="convert.html" id="tab">Converter</a>
+                    <a href="name.html" id="tab">Names</a>
+                </div>
+                <div class="logo" id="logo">File Converter</div>
+            </div>
+        </header>
+        <main id="main">
+            <section class="hero" id="hero">
+                <div id="main">
+                    <div class="container">
+                        <h1>Choose a File!</h1>
+                        <form id="converter-form">
+                            <input type="file" id="file-input" accept="*/*" required>
+                            <select id="format-select" required>
+                                <option value="">Select Convert Option</option>
+                                <option value="mp4">MKV to MP4</option>
+                                <option value="mov">MKV to MOV</option>
+                                <option value="mp4">MOV to MP4</option>
+                                <option value="mov">MP4 to MOV</option>
+                                <option value="jpg">PNG to JPG</option>
+                                <option value="png">JPG to PNG</option>
+                                <option value="doc">PDF to DOC</option>
+                                <option value="pdf">DOC to PDF</option>
+                                <option value="wav">MP3 to WAV</option>
+                                <option value="mp3">WAV to MP3</option>
+                                <option value="mp3">FLAC to MP3</option>
+                                <option value="mp4">AVI to MP4</option>
+                                <option value="avi">MP4 to AVI</option>
+                                <option value="avi">MOV to AVI</option>
+                                <option value="mp4">GIF to MP4</option>
+                                <option value="jpg">WEBP to JPG</option>
+                                <option value="png">BMP to PNG</option>
+                                <option value="pdf">TXT to PDF</option>
+                                <option value="txt">PDF to TXT</option>
+                                <option value="pdf">EPUB to PDF</option>
+                                <option value="xlsx">CSV to XLSX</option>
+                                <option value="csv">XLSX to CSV</option>
+                                <option value="pdf">PPT to PDF</option>
+                                <option value="ppt">PDF to PPT</option>
+                                <option value="img">ISO to IMG</option>
+                                <option value="iso">IMG to ISO</option>
+                                <option value="zip">RAR to ZIP</option>
+                                <option value="rar">ZIP to RAR</option>
+                            </select>
+                            <button type="submit">Convert File</button>
+                        </form>
             
-            <form id="converter-form">
-                <input type="file" id="file-input" accept="*/*" required>
-                <select id="format-select" required>
-                    <option value="">Select Convert Option</option>
-                    <option value="mp4">MKV to MP4</option>
-                    <option value="mov">MKV to MOV</option>
-                    <option value="mp4">MOV to MP4</option>
-                    <option value="mov">MP4 to MOV</option>
-                    <option value="jpg">PNG to JPG</option>
-                    <option value="png">JPG to PNG</option>
-                    <option value="doc">PDF to DOC</option>
-                    <option value="pdf">DOC to PDF</option>
-                    <option value="wav">MP3 to WAV</option>
-                    <option value="mp3">WAV to MP3</option>
-                    <option value="mp3">FLAC to MP3</option>
-                    <option value="mp4">AVI to MP4</option>
-                    <option value="avi">MP4 to AVI</option>
-                    <option value="avi">MOV to AVI</option>
-                    <option value="mp4">GIF to MP4</option>
-                    <option value="jpg">WEBP to JPG</option>
-                    <option value="png">BMP to PNG</option>
-                    <option value="pdf">TXT to PDF</option>
-                    <option value="txt">PDF to TXT</option>
-                    <option value="pdf">EPUB to PDF</option>
-                    <option value="xlsx">CSV to XLSX</option>
-                    <option value="csv">XLSX to CSV</option>
-                    <option value="pdf">PPT to PDF</option>
-                    <option value="ppt">PDF to PPT</option>
-                    <option value="img">ISO to IMG</option>
-                    <option value="iso">IMG to ISO</option>
-                    <option value="zip">RAR to ZIP</option>
-                    <option value="rar">ZIP to RAR</option>
-                </select>
-                <button type="submit">Convert File</button>
-            </form>
-
-            <div id="result-message"></div>
-            <a id="download-button" href="https://discord.gg/DXHgywdfPp">Join The Discord For More Updates!</a>
-
-            <!-- Scroll Down Button -->
-            <div class="scroll-down" onclick="scrollToInfo()">&#8595; Learn More</div>
-        </div>
-
-        <!-- Information Section -->
-        <section class="info-section" id="info">
-            <h2>About Our File Converter</h2>
-            <p>Our file converter supports various file types, allowing you to easily transform videos, images, documents, and more into the format you need.</p>
-            <p>Features include:</p>
-            <ul>
-                <li>Support for multiple file formats!</li>
-                <li>Easy to use interface!</li>
-                <li>Completely free!</li>
-            </ul>
-        </section>
+                        <div id="result-message"></div>
+                        <a id="download-button" href="https://discord.gg/DXHgywdfPp">Join The Discord For More Updates!</a>
+            
+                        <div class="scroll-down" onclick="scrollToInfo()">&#8595; Learn More</div>
+                    </div>
+            </section>
+            <section class="features" id="features">
+                <h2 id="features-title">Why Choose Us?</h2>
+                <div class="feature-container" id="feature-container">
+                    <div class="feature-item" id="feature-fast-reliable">
+                        <i class="fas fa-rocket feature-icon" id="icon-fast-reliable"></i>
+                        <p id="feature-fast-reliable-description">Experience speedy and reliable file conversions.</p>
+                    </div>
+                    <div class="feature-item" id="feature-privacy-guaranteed">
+                        <i class="fas fa-lock feature-icon" id="icon-privacy-guaranteed"></i>
+                        <p id="feature-privacy-guaranteed-description">Your files are private and secure with us.</p>
+                    </div>
+                    <div class="feature-item" id="feature-simple-interface">
+                        <i class="fas fa-user-friends feature-icon" id="icon-simple-interface"></i>
+                        <p id="feature-simple-interface-description">User-friendly interface for everyone.</p>
+                    </div>
+                    <div class="feature-item" id="feature-api-access">
+                        <i class="fas fa-code feature-icon" id="icon-api-access"></i>
+                        <p id="feature-api-access-description">Still being worked on to improve everything.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
     <script src="index.js"></script>
 </body>
